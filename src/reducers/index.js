@@ -6,6 +6,13 @@ export default function (state={},action){
             ...state,
             tasks:[...state.tasks, action.payload]
         }
+        // Remove from Task list
+        case "REMOVE_TASK":
+        return{
+            ...state,
+            tasks:state.tasks.filter(task =>task !== action.payload)
+
+        }
         default: return state
     }
 }
