@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navigation from './components/Navigation'
+import AddTask from './components/AddTask'
 
 
 class App extends React.Component{
@@ -11,6 +12,7 @@ class App extends React.Component{
       <div className="App">
         <>
         <Navigation/>
+        <AddTask/>
         </>
        
       </div>

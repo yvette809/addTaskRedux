@@ -9,5 +9,5 @@ const initial = {
 
 export default function configureStore (){
     return createStore(baseReducer,initial,
-      window._REDUX_DEVTOOLS_EXTENTION_ && window._REDUX_DEVTOOLS_EXTENTION_())
+     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 }
