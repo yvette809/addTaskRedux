@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navigation from './components/Navigation'
 import AddTask from './components/AddTask'
+import TaskList from './components/TaskList'
 
 
 class App extends React.Component{
@@ -13,6 +14,7 @@ class App extends React.Component{
         <>
         <Navigation/>
         <AddTask/>
+        <TaskList/>
         </>
        
       </div>

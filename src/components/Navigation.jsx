@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import {Nav,Form,Button,FormControl,NavDropdown,Navbar} from 'react-bootstrap'
+import {Nav,Form,Button,FormControl,NavDropdown,Navbar, Badge} from 'react-bootstrap'
+import {connect} from 'react-redux'
+
+
+const mapStateToProps = (state)=> state
+
+const mapDispatchToProps= (dispatch) =>
 
  class Navigation extends Component {
     render() {
@@ -20,8 +26,9 @@ import {Nav,Form,Button,FormControl,NavDropdown,Navbar} from 'react-bootstrap'
                 </NavDropdown>
               </Nav>
               <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-success">Search</Button>
+                <FormControl type="text"  value = {this.state.newTaskText} onChange ={(e)=>this.setState({newTaskText:e.currentTarget.value})} placeholder="New Task" className="mr-sm-2" />
+                <Button variant="outline-success" onClick = {()=> this.props.addTask(this.state.newTaskText)}>Add</Button>
+                <Badge variant ="danger">{this.props.tasks.length}</Badge>
               </Form>
             </Navbar.Collapse>
           </Navbar>
@@ -29,4 +36,4 @@ import {Nav,Form,Button,FormControl,NavDropdown,Navbar} from 'react-bootstrap'
     }
 }
 
-export default Navigation
+export default connect(mapStateToProps, mapDispatchToProps) (Navigation)
